@@ -3,9 +3,18 @@ server:
 
 spring:
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        native:
-          search-locations: "classpath:/configs"
+        git:
+          uri: "https://github.com/VikCodesNow/config-store.git"
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+
+encrypt:
+  key: "<Sx/BpjwbifAA!!"
+
+
